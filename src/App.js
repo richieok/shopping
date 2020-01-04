@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, Switch} from 'react-router-dom';
+// import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/navbar';
+import Home from './components/main';
+import Dashboard from './components/dashboard';
+import Footer from './components/footer'
+import NotFound from './components/notfound';
+
+// const backendPort = process.env.REACT_APP_BACKEND_PORT;
+// console.log(`backendPort = ${backendPort}`);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar/>
+      <Switch>
+        <Route path="/" exact render={() => <Home />} />
+        <Route path="/dashboard" exact render={() => <Dashboard />} />
+        {/* <Route path="/signin" exact render={() => <Home />} /> */}
+        <Route component={NotFound} />
+      </Switch>
+      <Footer/>
     </div>
   );
 }
