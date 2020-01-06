@@ -3,9 +3,9 @@ import React from 'react';
 class Dashboard extends React.Component {
     render() {
         return (
-            <div>
+            <main>
                 <h1>Dashboard</h1>
-            </div>
+            </main>
         );
     }
 }

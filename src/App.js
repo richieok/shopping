@@ -4,8 +4,9 @@ import {Route, Switch} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar';
 import Home from './components/main';
+import SignIn from './components/signin';
 import Dashboard from './components/dashboard';
-import Footer from './components/footer'
+import Footer from './components/footer';
 import NotFound from './components/notfound';
 
 // const backendPort = process.env.REACT_APP_BACKEND_PORT;
@@ -18,7 +19,7 @@ function App() {
       <Switch>
         <Route path="/" exact render={() => <Home />} />
         <Route path="/dashboard" exact render={() => <Dashboard />} />
-        {/* <Route path="/signin" exact render={() => <Home />} /> */}
+        <Route path="/signin" render={() => <SignIn />} />
         <Route component={NotFound} />
       </Switch>
       <Footer/>

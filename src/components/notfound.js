@@ -3,8 +3,9 @@ import {Redirect} from "react-router-dom";
 
 export default class NotFound extends React.Component {
     render(){
-        return (
-            <h1>NotFound</h1>
-        )
+        if (this.props.isLoggedIn){
+            return <Redirect to="/dashboard" />;
+        }
+        return <Redirect to="/" />;
     }
 }
